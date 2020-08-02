@@ -8,4 +8,4 @@ WORKDIR ~/cloudrun
 
 # Install production dependencies.
 RUN pip install --requirement requirements.txt
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 2 cloudrun:app
+CMD exec gunicorn --bind 0.0.0.0:8080 --workers 1 --threads 2 cloudrun:app
