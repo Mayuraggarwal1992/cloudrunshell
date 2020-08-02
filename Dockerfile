@@ -1,5 +1,8 @@
 FROM python:3.7
 
+#Installing net-tools
+RUN apt-get update && apt install net-tools
+
 # Copy local code to the container image.
 RUN mkdir p ~/cloudrun
 COPY . ~/cloudrun
