@@ -25,22 +25,5 @@ def cmd_to_run(command):
     return redirect(url_for('home'))
 
 
-# @app.route('/exec', methods=['POST'])
-# def route_exec():
-#     # command = request.data.decode('utf-8')
-#     command = "dir -r"
-#     print(command)
-#     try:
-#         exec_output = subprocess.run('dir -r', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=10, universal_newlines=True)
-#         response = make_response(exec_output.stdout, 200)
-#         response.mimetype = "text/plain"
-#         return response
-#     except subprocess.TimeoutExpired:
-#         response = make_response("Timedout", 400)
-#         response.mimetype = "text/plain"
-#         return response
-#     return red
-
-
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get('PORT', 8080)))
