@@ -14,7 +14,7 @@ def home():
 def cmd_to_run(command):
     try:
         cmd = command
-        cmd_output = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=10, universal_newlines=True)
+        cmd_output = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=60, universal_newlines=True)
         response = make_response(cmd_output.stdout, 200)
         response.mimetype = "text/plain"
         return response

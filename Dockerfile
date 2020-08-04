@@ -1,7 +1,7 @@
 FROM python:3.7
 
 #Installing net-tools
-RUN apt-get update && apt install net-tools
+RUN apt-get update && apt install net-tools && apt-get install traceroute
 
 # Copy local code to the container image.
 RUN mkdir p ~/cloudrun
